@@ -1,0 +1,50 @@
+<!--Code based upon Lecturer Joshua Cassidy's 'staff-todos-part-6' example on Moodle https://mymoodle.ncirl.ie/course/view.php?id=702-->
+
+<!DOCTYPE html>
+<%- include ./partials/header %>
+  <html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <!--Page that a user is redirected to upon deciding to update order information-->
+
+  <body>
+    <h3 class="description">Update Order Information</h3>
+    <br>
+    <!--If statement that will output an error if no fields are updated-->
+    <% if(error) { %>
+      <p class="error">Error: <%= error %>
+      </p>
+      <% } %>
+        <form class="update" action="/update" method="post">
+          <input type="hidden" name="order_id" value="<%= order_id %>" />
+          <label class="textStyle" for="forename">Forename:</label>
+          <input id="forenameSearch" type="text" name="forename" />
+          <br>
+          <label class="textStyle" for="surname">Surname:</label>
+          <input id="surnameSearch" type="text" name="surname" />
+          <br>
+          <label class="textStyle" for="address">Address:</label>
+          <input id="addressSearch" type="text" name="address" />
+          <br>
+          <label class="textStyle" for="city">City:</label>
+          <input id="citySearch" type="text" name="city" />
+          <br>
+          <label class="textStyle" for="county">County:</label>
+          <input id="countySearch" type="text" name="county" />
+          <br>
+          <label class="textStyle" for="eircode">Eircode:</label>
+          <input id="eircodeSearch" type="text" name="eircode" />
+          <br>
+          <label class="textStyle" for="order_date">Order Date:</label>
+          <input id="orderSearch" type="text" name="order_date" />
+          <br>
+          <button id="updateSubmit" type="submit">Update</button>
+        </form>
+  </body>
+  <%- include ./partials/footer.ejs %>
+
+  </html>

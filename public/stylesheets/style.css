@@ -1,0 +1,397 @@
+/*Sets the style for my navbar background*/
+nav {
+  width: 100;
+  background: #333;
+  overflow: hidden;
+  text-align: center;
+}
+
+/*Styles my links*/
+nav a {
+  width: 230px;
+  display: block;
+  padding: 30px 10px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+/*Styles the hover function of my links*/
+nav a:hover {
+  background-color: #3b82a3;
+  transition: 0.4s;
+  color:white;
+}
+
+/*Sets the position for my unordered list*/
+nav ul {
+  padding: 0;
+  margin: 0 0 0 200px;
+  list-style: none;
+  display: inline-block;
+}
+
+/*Sets position and font size for every list element*/
+nav li {
+  float:left;
+  font-size: large;
+}
+
+/*Sets the position and size of my navbar image*/
+.siteLogo img {
+  position: absolute;
+  height:80px;
+  width: 200px;
+  margin:5px;
+}
+
+/*Styles the buttons that navigate a user to different pages of my site*/
+.pageLink{
+  font-size: large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 5px;
+  display:block;
+}
+
+/*Sets the position of the button that brings a user back to the add tracking info page*/
+#trackLink {
+  font-size: large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 5px;
+  display:block;
+}
+
+/*Styles the button that brings a user back to the add tracking info page*/
+#btnTrack {
+  color: white;
+  background-color:rgb(52, 187, 63);
+}
+
+/*Adds hover function to the button that brings a user to the add tracking info page*/
+#btnTrack:hover {
+  background-color:rgb(26, 141, 36);
+}
+
+/*Sets the style and position of my site footer*/
+.footer {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: #333;
+  color: white;
+  font-weight: 700;
+}
+
+/*Styles the headers for each page of my site*/
+.description {
+  font-size: xx-large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 15px;
+  display:block;
+  text-decoration: underline;
+}
+
+/*Sets the style for the labels of my input boxes*/
+.textStyle {
+  font-weight: 700;
+}
+
+
+/*Styles the tables used on my site*/
+.display {
+  font-family: Arial;
+  border-collapse: collapse;
+  width: 75%;
+  background-color: #333;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.display td, .display th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.display th {
+  text-align: left;
+  background-color: #3b82a3;
+  color: white;
+}
+
+/*Styles the update product form*/
+.update {
+  font-size: large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 5px;
+  display:block;
+}
+
+/*Styles the error message for when no data is updated*/
+.error {
+  font-size: large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 5px;
+  display:block;
+  font-weight: 700;
+  color:rgb(163, 39, 39)
+}
+
+/*Styles add product form*/
+#addProduct {
+  font-size: large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 5px;
+  display:block;
+}
+
+/*Styles forname input*/
+#forenameSearch {
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles surname input*/
+#surnameSearch {
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles address input*/
+#addressSearch {
+  margin-top: 5px;
+  margin-left: 16px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles city input*/
+#citySearch {
+  margin-top: 5px;
+  margin-left: 50px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles county input*/
+#countySearch {
+  margin-top: 5px;
+  margin-left: 23px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles eircode input*/
+#eircodeSearch {
+  margin-top: 5px;
+  margin-left: 22px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles order input*/
+#orderSearch {
+  margin-top: 5px;
+  margin-right: 9px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles product input*/
+#productSearch {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles name input*/
+#nameSearch {
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles type input*/
+#typeSearch {
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles amount input*/
+#amountSearch {
+  margin-top: 5px;
+  margin-right:17px;
+  width: 300px;
+  margin-bottom: 5px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles the buttons that navigate a user to different pages of my site*/
+.btnTransistion {
+  color: white;
+  background-color:#cd5ee4;
+}
+
+/*Adds hover function to buttons that navigate a user to different pages of my site*/
+.btnTransistion:hover {
+  background-color:#a63fbb;
+}
+
+/*Styles submit button*/
+.btnSuccess {
+  color: white;
+  background-color:rgb(52, 187, 63);
+}
+
+/*Styles the hover functionality for submit button*/
+.btnSuccess:hover {
+  background-color:rgb(26, 141, 36);
+}
+
+/*Styles the add order form*/
+#addOrder {
+  font-size: large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 5px;
+  display:block;
+}
+
+/*Styles the update button for orders*/
+#updateSubmit {
+  margin: 10px;
+  color: white;
+  background-color: #3b82a3;
+}
+
+/*Styles the hover functionality for update button*/
+#updateSubmit:hover {
+  background-color: #26617c;
+}
+
+/*Styles the two buttons that update or delete products*/
+.productButtons {
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  margin-right: 0 auto;
+  padding: 5px;
+}
+
+/*Styles update product button*/
+.prod_btnUpd{
+  margin: 10px;
+  color: white;
+  background-color: #3b82a3;
+}
+
+/*Styles delete product button*/
+.prod_btnDel{
+  margin: 10px;
+  color: white;
+  background-color:rgb(206, 71, 71);
+}
+
+/*Styles hover functionality for product update button*/
+.prod_btnUpd:hover{
+  background-color: #26617c;
+}
+
+/*Styles hover functionality for product delete button*/
+.prod_btnDel:hover{
+  background-color: rgb(163, 39, 39);
+}
+
+/*Styles the form for updating orders*/
+.orderButtons {
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  margin-right: 0 auto;
+
+}
+
+/*Styles the update order button*/
+.ord_btnUpd {
+  margin-right: 10px;
+  margin-bottom: 30px;
+  color: white;
+  background-color: #3b82a3;
+}
+
+/*Styles the delete order button*/
+.ord_btnDel {
+  margin-bottom: 10px;
+  color: white;
+  background-color:rgb(206, 71, 71);
+}
+
+/*Styles hover functionality for update order button*/
+.ord_btnUpd:hover {
+  background-color: #26617c;
+}
+
+/*Styles hover functionality for delete order button*/
+.ord_btnDel:hover {
+  background-color: rgb(163, 39, 39);
+}
+
+/*Sets position of my tracking input form*/
+#addTracking {
+  font-size: large;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 5px;
+  display:block;
+}
+
+/*Styles courier company input*/
+#courierSearch {
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles shipping date input*/
+#shippingSearch {
+  margin-top: 5px;
+  margin-left: 44px;
+  width: 300px;
+  padding:5px;
+  border-radius:5px;
+}
+
+/*Styles destination input*/
+#destSearch {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding:5px;
+  border-radius:5px;
+}
+
+body { /*created the background colour using https://cssgradient.io/*/
+  background: rgb(238,174,202);
+  background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 50%, rgba(238,174,202,1) 100%);
+}

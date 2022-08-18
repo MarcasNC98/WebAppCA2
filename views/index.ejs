@@ -1,0 +1,79 @@
+<!--Code based upon Lecturer Joshua Cassidy's 'staff-todos-part-6' example on Moodle https://mymoodle.ncirl.ie/course/view.php?id=702-->
+
+<%- include ./partials/header %>
+  <% if(link) {%>
+    <a href="<%= link %>">
+      <%= link_name %>
+    </a>
+    <% } %>
+      <br>
+      <% if(page_header) { %>
+        <h2>
+          <%= page_header %>
+        </h2>
+        <% } %>
+          <!--Title of the current page-->
+          <h3 class="description">1. Current Orders</h3>
+          <br>
+          <!--Button that will redirect the user to the Add Products page when clicked-->
+          <div class="pageLink">
+            <form action="/products" method="get">
+              <button class="btnTransistion" type="submit">Add Product</button>
+            </form>
+          </div>
+          <br>
+          <!--For loop that will display the information entered into the orders table of my database in a table format-->
+          <% for(var i=0; i < orders.length; i++){ %>
+            <table class="display">
+              <tr>
+                <th>Forename</th>
+                <th>Surname</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>County</th>
+                <th>Eircode</th>
+                <th>Order Date</th>
+                <th>Product Ordered</th>
+              </tr>
+              <tr>
+                <td>
+                  <%= orders[i].forename %>
+                </td>
+                <td>
+                  <%= orders[i].surname %>
+                </td>
+                <td>
+                  <%= orders[i].address %>
+                </td>
+                <td>
+                  <%= orders[i].city %>
+                </td>
+                <td>
+                  <%= orders[i].county %>
+                </td>
+                <td>
+                  <%= orders[i].eircode %>
+                </td>
+                <td>
+                  <%= orders[i].order_date %>
+                </td>
+                <td>
+                  <%= orders[i].pName %>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <!--Buttons that will enable the updating and deletion of data entered into my orders table-->
+            <div class="orderButtons">
+              <form action="/update" method="get">
+                <input type="hidden" name="order_id" value="<%= orders[i].order_id %>" />
+                <button class="ord_btnUpd" type="submit">Update Order</button>
+              </form>
+              <form action="/delete" method="get">
+                <input type="hidden" name="order_id" value="<%= orders[i].order_id %>">
+                <button class="ord_btnDel" type="submit">Delete Order</button>
+              </form>
+            </div>
+            <br>
+            <% } %>
+              <%- include ./partials/footer %>

@@ -1,0 +1,51 @@
+<!--Code based upon Lecturer Joshua Cassidy's 'staff-todos-part-6' example on Moodle https://mymoodle.ncirl.ie/course/view.php?id=702-->
+
+<!DOCTYPE html>
+<!--Will display my header-->
+<%- include ./partials/header %>
+  <html lang="en" dir="ltr">
+
+  <body>
+    <!--The title of the current webpage-->
+    <h3 class="description">3. Add Order</h3>
+    <br>
+    <!--A form that will enable the adding of data into the orders table in my database-->
+    <form id="addOrder" action="/add" method="post">
+      <label class="textStyle" for="forename">Forename:</label>
+      <input id="forenameSearch" type="text" name="forename">
+      <br>
+      <label class="textStyle" for="surname">Surname:</label>
+      <input id="surnameSearch" type="text" name="surname">
+      <br>
+      <label class="textStyle" for="address">Address:</label>
+      <input id="addressSearch" type="text" name="address">
+      <br>
+      <label class="textStyle" for="city">City:</label>
+      <input id="citySearch" type="text" name="city">
+      <br>
+      <label class="textStyle" for="county">County:</label>
+      <input id="countySearch" type="text" name="county">
+      <br>
+      <label class="textStyle" for="eircode">Eircode:</label>
+      <input id="eircodeSearch" type="text" name="eircode" />
+      <br>
+      <label class="textStyle" for="order_date">Order Date:</label>
+      <input id="orderSearch" type="text" name="order_date">
+      <br>
+      <label class="textStyle" id="productSearch" for="product_id">Product:</label>
+      <!--For loop that uses the variable 'orders' defined in index.js to loop through orders table and get the product name that corresponds with the relevant product ID-->
+      <select name="product_id">
+        <% for(var i=0; i < orders.length; i++) { %>
+          <option value="<%= orders[i].product_id %>">
+            <%= orders[i].pName %>
+          </option>
+          <% } %>
+      </select>
+      <br>
+      <button class="btnSuccess" type="submit">Add Order</button>
+    </form>
+  </body>
+  <!--Will display my footer-->
+  <%- include ./partials/footer.ejs %>
+
+  </html>

@@ -1,0 +1,68 @@
+<!--Code based upon Lecturer Joshua Cassidy's 'staff-todos-part-6' example on Moodle https://mymoodle.ncirl.ie/course/view.php?id=702-->
+
+<!DOCTYPE html>
+<%- include ./partials/header %>
+  <html lang="en" dir="ltr">
+
+  <body>
+    <h3 class="description">2. Product Information</h3>
+    <br>
+    <!--Form that enables the adding of data into my products table-->
+    <form id="addProduct" action="/products/add" method="post">
+      <label class="textStyle" for="pName">Product Name:</label>
+      <input id="nameSearch" type="text" name="pName" />
+      <br>
+      <label class="textStyle" for="pType">Product Type:</label>
+      <input id="typeSearch" type="text" name="pType" />
+      <br>
+      <label class="textStyle" for="pAmount">Product Amount:</label>
+      <input id="amountSearch" type="text" name="pAmount" />
+      <br>
+      <button class="btnSuccess" type="submit">Add Product</button>
+    </form>
+    <br>
+    <!--Button that will redirect the user to the Add Orders page when clicked-->
+    <div class="pageLink">
+      <form action="/add" method="get">
+        <button class="btnTransistion" type="submit">Go To Customer Order</button>
+      </form>
+    </div>
+
+    <h3 class="description">Current Product Stock</h3>
+    <br>
+    <!--For loop that will display the data in the products table in a table format-->
+    <% for(var i=0; i < products.length; i++) { %>
+      <table class="display">
+        <tr>
+          <th>Product Name</th>
+          <th>Product Type</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>
+            <%= products[i].pName %>
+          </td>
+          <td>
+            <%= products[i].pType %>
+          </td>
+          <td>
+            <%= products[i].pAmount %>
+          </td>
+        </tr>
+      </table>
+      <!--Buttons that enable the updating and deletion of data in my products table-->
+      <div class="productButtons">
+        <form action="/products/update" method="get">
+          <input type="hidden" name="product_id" value="<%= products[i].product_id %>" />
+          <button class="prod_btnUpd" type="submit">Update Product</button>
+        </form>
+        <form action="/products/delete" method="get">
+          <input type="hidden" name="product_id" value="<%= products[i].product_id %>">
+          <button class="prod_btnDel" type="submit">Delete Product</button>
+        </form>
+      </div>
+      <% } %>
+  </body>
+  <%- include ./partials/footer.ejs %>
+
+  </html>

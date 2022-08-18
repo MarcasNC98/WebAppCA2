@@ -1,0 +1,63 @@
+<!--Code based upon Lecturer Joshua Cassidy's 'staff-todos-part-6' example on Moodle https://mymoodle.ncirl.ie/course/view.php?id=702-->
+
+<%- include ./partials/header %>
+  <% if(link) {%>
+    <a href="<%= link %>">
+      <%= link_name %>
+    </a>
+    <% } %>
+      <br>
+      <% if(page_header) { %>
+        <h2>
+          <%= page_header %>
+        </h2>
+        <% } %>
+          <!--Title of the current page-->
+          <h3 class="description">5. Current Tracking Info</h3>
+          <br>
+          <!--Button that will redirect the user to the Current Orders page when clicked-->
+          <div id="trackLink">
+            <form action="/tracking/add" method="get">
+              <button id="btnTrack" type="submit"> Add Tracking Info</button>
+            </form>
+          </div>
+          <div class="pageLink">
+            <form action="/" method="get">
+              <button class="btnTransistion" type="submit"> Go To Current Orders</button>
+            </form>
+          </div>
+          <br>
+          <!--For loop that will display the information entered into the orders table of my database in a table format-->
+          <% for(var i=0; i < tracking.length; i++){ %>
+            <table class="display">
+              <tr>
+                <th>Courier Company</th>
+                <th>Pickup Date</th>
+                <th>Destination</th>
+              </tr>
+              <tr>
+                <td>
+                  <%= tracking[i].courier %>
+                </td>
+                <td>
+                  <%= tracking[i].shipping_date %>
+                </td>
+                <td>
+                  <%= tracking[i].eircode %>
+                </td>
+              </tr>
+            </table>
+            <br>
+            <!--Buttons that will enable the updating and deletion of data entered into my tracking table-->
+            <div class="orderButtons">
+              <form action="/tracking/update" method="get">
+                <input type="hidden" name="tracking_id" value="<%= tracking[i].tracking_id %>" />
+                <button class="ord_btnUpd" type="submit">Update Tracking</button>
+              </form>
+              <form action="/tracking/delete" method="get">
+                <input type="hidden" name="tracking_id" value="<%= tracking[i].tracking_id %>">
+                <button class="ord_btnDel" type="submit">Delete Tracking</button>
+              </form>
+            </div>
+            <% } %>
+              <%- include ./partials/footer.ejs %>

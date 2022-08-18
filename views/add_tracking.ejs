@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--Will display my header-->
+<%- include ./partials/header %>
+  <html lang="en" dir="ltr">
+
+  <body>
+    <!--The title of the current webpage-->
+    <h3 class="description">4. Add tracking Info</h3>
+    <br>
+    <!--A form that will enable the adding of data into the tracking table in my database-->
+    <form id="addTracking" action="/tracking/add" method="post">
+      <label class="textStyle" for="courier">Courier Company:</label>
+      <input id="courierSearch" type="text" name="courier">
+      <br>
+      <label class="textStyle" for="shipping_date">Pickup Date:</label>
+      <input id="shippingSearch" type="text" name="shipping_date">
+      <br>
+      <label class="textStyle" id="destSearch" for="order_id">Destination:</label>
+      <!--For loop that uses the variable 'tracking' defined in tracking.js to loop through tracking table and get the order eircode that corresponds with the relevant order ID-->
+      <select name="order_id">
+        <% for(var i=0; i < tracking.length; i++) { %>
+          <option value="<%= tracking[i].order_id %>">
+            <%= tracking[i].eircode %>
+          </option>
+          <% } %>
+      </select>
+      <br>
+      <button class="btnSuccess" type="submit">Add Tracking Info</button>
+    </form>
+    <!--Will display my footer-->
+    <%- include ./partials/footer.ejs %>
+
+  </html>

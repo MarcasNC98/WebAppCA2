@@ -1,0 +1,35 @@
+<!--Code based upon Lecturer Joshua Cassidy's 'staff-todos-part-6' example on Moodle https://mymoodle.ncirl.ie/course/view.php?id=702-->
+
+<!DOCTYPE html>
+<%- include ./partials/header %>
+  <html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <!--Page that a user is redirected to upon deciding to update tracking information-->
+
+  <body>
+    <h3 class="description">Update Tracking Information</h3>
+    <br>
+    <!--If statement that will output an error if no fields are updated-->
+    <% if(error) { %>
+      <p class="error">Error: <%= error %>
+      </p>
+      <% } %>
+        <form class="update" action="/tracking/update" method="post">
+          <input type="hidden" name="tracking_id" value="<%= tracking_id %>" />
+          <label class="textStyle" for="courier">Courier Company:</label>
+          <input id="courierSearch" type="text" name="courier" />
+          <br>
+          <label class="textStyle" for="shipping_date">Pickup Date:</label>
+          <input id="shippingSearch" type="text" name="shipping_date" />
+          <br>
+          <button id="updateSubmit" type="submit">Update</button>
+        </form>
+  </body>
+  <%- include ./partials/footer.ejs %>
+
+  </html>

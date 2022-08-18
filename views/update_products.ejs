@@ -1,0 +1,37 @@
+<!--Code based upon Lecturer Joshua Cassidy's 'staff-todos-part-6' example on Moodle https://mymoodle.ncirl.ie/course/view.php?id=702-->
+
+<!DOCTYPE html>
+<%- include ./partials/header %>
+  <html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <!--Page that the user is redirected to upon selecting that they want to update product information-->
+
+  <body>
+    <h3 class="description">Update Product Information</h3>
+    <br>
+    <% if(error) { %>
+      <p class="error">Error: <%= error %>
+      </p>
+      <% } %>
+        <form class="update" action="/products/update" method="post">
+          <input type="hidden" name="product_id" value="<%= product_id %>" />
+          <label class="textStyle" for="pName">Product Name:</label>
+          <input id="nameSearch" type="text" name="pName" />
+          <br>
+          <label class="textStyle" for="pType">Product Type:</label>
+          <input id="typeSearch" type="text" name="pType" />
+          <br>
+          <label class="textStyle" for="pAmount">Product Amount:</label>
+          <input id="amountSearch" type="text" name="pAmount" />
+          <br>
+          <button id="updateSubmit" type="submit">Update</button>
+        </form>
+  </body>
+  <%- include ./partials/footer.ejs %>
+
+  </html>
